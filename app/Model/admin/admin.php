@@ -16,7 +16,7 @@ class admin extends Authenticatable
 
     public function getNameAttribute($value)
         {
-            return ucfirst($value);
+            return ($value);
         }
     /**
      * The attributes that are mass assignable.

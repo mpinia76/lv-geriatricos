@@ -30,7 +30,7 @@ return [
         'array'   => 'The :attribute must have between :min and :max items.',
     ],
     'boolean'              => 'El campo :attribute debe ser verdadero o falso.',
-    'confirmed'            => 'The :attribute confirmation does not match.',
+    'confirmed'            => 'La confirmación de :attribute no coincide.',
     'date'                 => 'The :attribute is not a valid date.',
     'date_format'          => 'The :attribute does not match the format :format.',
     'different'            => 'The :attribute and :other must be different.',
@@ -38,7 +38,7 @@ return [
     'digits_between'       => 'The :attribute must be between :min and :max digits.',
     'dimensions'           => 'The :attribute has invalid image dimensions.',
     'distinct'             => 'El campo :attribute está duplicado.',
-    'email'                => 'The :attribute must be a valid email address.',
+    'email'                => 'El :attribute debe ser una dirección de correo electrónico válida.',
     'exists'               => 'The selected :attribute is invalid.',
     'file'                 => 'The :attribute must be a file.',
     'filled'               => 'El campo :attribute debe terner un valor.',
@@ -61,7 +61,7 @@ return [
     'min'                  => [
         'numeric' => 'The :attribute must be at least :min.',
         'file'    => 'The :attribute must be at least :min kilobytes.',
-        'string'  => 'The :attribute must be at least :min characters.',
+        'string'  => 'La :attribute debe tener al menos :min caracteres.',
         'array'   => 'The :attribute must have at least :min items.',
     ],
     'not_in'               => 'The selected :attribute is invalid.',
@@ -116,6 +116,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'title' => 'título',
+        'name' => 'nombre',
+        'password' => 'clave',
+        'for' => 'para',
+    ],
 
 ];

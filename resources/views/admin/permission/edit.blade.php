@@ -35,7 +35,7 @@
 	            	@include('includes.messages') 
 	              <div class="form-group">
 	                <label for="name">Nombre</label>
-	                <input type="text" class="form-control" id="name" name="name" placeholder="permission Title" value="{{ $permission->name }}">
+	                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="{{ $permission->name }}">
 	              </div>
 
 	              <div class="form-group">

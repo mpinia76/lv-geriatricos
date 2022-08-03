@@ -6,13 +6,13 @@
 	  <!-- Content Header (Page header) -->
 	  <section class="content-header">
 	    <h1>
-	      User
-	      <small>Create form element</small>
+	      Usuario
+	      <small>Crear</small>
 	    </h1>
 	    <ol class="breadcrumb">
 	      <li><a href="{{ route('admin.home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-	      <li><a href="{{ route('user.index') }}">User Table</a></li>
-	      <li class="active">Create Form</li>
+	      <li><a href="{{ route('user.index') }}">Usuarios</a></li>
+	      <!--<li class="active">Create Form</li>-->
 	    </ol>
 	  </section>
 
@@ -23,7 +23,7 @@
 	        <!-- general form elements -->
 	        <div class="box box-primary">
 	          <div class="box-header with-border">
-	            <h3 class="box-title">Create User</h3>
+	            <h3 class="box-title">Crear usuario</h3>
 	          </div>   
 	          <!-- /.box-header -->
 	          <!-- form start -->
@@ -33,8 +33,8 @@
 	            <div class="col-lg-offset-3 col-lg-6">
 	            	@include('includes.messages') 
 	              <div class="form-group">
-                  <label for="name">User Name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="User Name" value="{{ old('name') }}">
+                  <label for="name">Nombre</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="{{ old('name') }}">
                 </div>
 
                 <div class="form-group">
@@ -42,32 +42,32 @@
                   <input type="text" class="form-control" id="email" name="email" placeholder="email" value="{{ old('email') }}">
                 </div>
 
-                <div class="form-group">
+                <!--<div class="form-group">
                   <label for="phone">Phone</label>
                   <input type="text" class="form-control" id="phone" name="phone" placeholder="phone" value="{{ old('phone') }}">
+                </div>-->
+
+                <div class="form-group">
+                  <label for="password">Clave</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Clave" value="{{ old('password') }}">
                 </div>
 
                 <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" name="password" placeholder="password" value="{{ old('password') }}">
-                </div>
-
-                <div class="form-group">
-                  <label for="password_confirmation">Confirm Passowrd</label>
-                  <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="confirm passowrd">
+                  <label for="password_confirmation">Confirmar clave</label>
+                  <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Confirmar clave">
 								</div>
 								
 								<div class="form-group">
-                  <label for="confirm_passowrd">Status</label>
+                  <label for="status">Estado</label>
                   <div class="checkbox">
                     <label ><input type="checkbox" name="status" value="0" @if (old('status') == 1)
                       checked
-                    @endif value="1">Status</label>
+                    @endif value="1">Estado</label>
                   </div>
                 </div>
 
                 <div class="form-group">
-                <label>Assign Role</label>
+                <label>Roles</label>
                 <div class="row">
                   @foreach ($roles as $role)
                       <div class="col-lg-3">
@@ -79,8 +79,8 @@
                 </div>
 
 	            <div class="form-group">
-	              <button type="submit" class="btn btn-primary">Submit</button>
-	              <a href='{{ route('user.index') }}' class="btn btn-warning">Back</a>
+	              <button type="submit" class="btn btn-primary">Guardar</button>
+	              <a href='{{ route('user.index') }}' class="btn btn-warning">Volver</a>
 	            </div>
 	            	
 	            </div>

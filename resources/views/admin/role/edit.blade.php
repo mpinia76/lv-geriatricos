@@ -35,7 +35,7 @@
 	            	@include('includes.messages') 
 	              <div class="form-group">
 	                <label for="name">Nombre</label>
-	                <input type="text" class="form-control" id="name" name="name" placeholder="role Title" value="{{ $role->name }}">
+	                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="{{ $role->name }}">
 	              </div>
 
 								<div class="row">

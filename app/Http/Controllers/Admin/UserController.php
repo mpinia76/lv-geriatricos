@@ -9,6 +9,13 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+
+    // Middleware for Admin
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -42,13 +49,13 @@ class UserController extends Controller
         $this->validate($request,[
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:admins',
-            'phone' => 'required|numeric',
+
             'password' => 'required|string|min:6|confirmed',
         ]);
         $request['password'] = bcrypt($request->password);
         $user = admin::create($request->all());
         $user->roles()->sync($request->role);
-        return redirect(route('user.index'))->with('message','Added Admin User Successfully');
+        return redirect(route('user.index'))->with('message','Usuario agregado con éxito');
     }
 
     /**
@@ -76,11 +83,11 @@ class UserController extends Controller
         $this->validate($request,[
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
-            'phone' => 'required|numeric',
+
         ]);
         $user = admin::where('id',$id)->update($request->except('_token','_method','role'));
         admin::find($id)->roles()->sync($request->role);
-        return redirect(route('user.index'))->with('message','User updated successfully');
+        return redirect(route('user.index'))->with('message','Usuario modificado con éxito');
     }
 
     /**
